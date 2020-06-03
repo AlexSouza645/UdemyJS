@@ -2,12 +2,37 @@ const porta = 3003
 
 const express = require('express')
 const app = express()
+//importar funções exportadas pelo arquivo banco de dados
 
-app.get('/produtos', (req,res,next) =>{
-    res.send({nome:'notebook', preco:123.45})//send envia uma resposta objeto
+const bancoDeDados = require('../bancoDeDados')
+
+/*app.get('/produtos', (req,res,next) =>{
+    console.log('Middleware 1...')
+    next()
+})*/
+
+app.get('/produtos', (req, res, next) => {//get é  uma forma de requisição
+    res.send(bancoDeDados.getProdutos())//send envia uma resposta objeto
     //converte automaticamente para json
+})// existem requisições get , post, put , delete , copy
+
+//nova url
+app.get('/produtos/:id', (req, res, next) => {
+    res.send(bancoDeDados.getProduto(req.params.id))
+})
+//get= pedir requisição//
+
+//para submeter os dados e salvar um novo produto
+app.post('/produtos', (req, res, next) => {
+    const produto = bancoDeDados.salvarProduto({
+        nome: req.body.name,
+        preco: req.body.preco
+    })
+    res.send(produto)//json
 })
 
-app.listen(porta, ()=>{
-    console.log(`servidor executando na porta ${ porta} entendeu rsrs`)
+
+
+app.listen(porta, () => {
+    console.log(`servidor executando na porta ${porta} entendeu `)
 })
