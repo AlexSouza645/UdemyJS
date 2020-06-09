@@ -18,11 +18,12 @@ app.get('/produtos', (req, res, next) => {//get é  uma forma de requisição
 
 //nova url
 app.get('/produtos/:id', (req, res, next) => {
-    res.send(bancoDeDados.getProduto(req.params.id))
+    res.send(bancoDeDados.getProduto(req.params.id))// passar o param q eu recebi (id)
 })
 //get= pedir requisição//
 
 //para submeter os dados e salvar um novo produto
+//salvar um produto no banco de dados
 app.post('/produtos', (req, res, next) => {
     const produto = bancoDeDados.salvarProduto({
         nome: req.body.name,
