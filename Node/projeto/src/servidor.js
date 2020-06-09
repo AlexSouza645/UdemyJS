@@ -2,6 +2,10 @@ const porta = 3003
 
 const express = require('express')
 const app = express()
+
+//importar body -parser
+const bodyParser = require('body-parser')
+
 //importar funções exportadas pelo arquivo banco de dados
 
 const bancoDeDados = require('../bancoDeDados')
@@ -10,7 +14,7 @@ const bancoDeDados = require('../bancoDeDados')
     console.log('Middleware 1...')
     next()
 })*/
-
+app.use(bodyParser.urlencoded({extended: true}))//retorno dela é uma função middleware
 app.get('/produtos', (req, res, next) => {//get é  uma forma de requisição
     res.send(bancoDeDados.getProdutos())//send envia uma resposta objeto
     //converte automaticamente para json
@@ -26,7 +30,7 @@ app.get('/produtos/:id', (req, res, next) => {
 //salvar um produto no banco de dados
 app.post('/produtos', (req, res, next) => {
     const produto = bancoDeDados.salvarProduto({
-        nome: req.body.name,
+        nome: req.body.nome,
         preco: req.body.preco
     })
     res.send(produto)//json
@@ -37,3 +41,4 @@ app.post('/produtos', (req, res, next) => {
 app.listen(porta, () => {
     console.log(`servidor executando na porta ${porta} entendeu `)
 })
+//O put atualiza o recurso como um todo enquanto patch atualizaria parcialmente
