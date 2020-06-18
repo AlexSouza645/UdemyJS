@@ -14,7 +14,7 @@ const bancoDeDados = require('../bancoDeDados')
     console.log('Middleware 1...')
     next()
 })*/
-app.use(bodyParser.urlencoded({extended: true}))//retorno dela é uma função middleware
+app.use(bodyParser.urlencoded({ extended: true }))//retorno dela é uma função middleware
 app.get('/produtos', (req, res, next) => {//get é  uma forma de requisição
     res.send(bancoDeDados.getProdutos())//send envia uma resposta objeto
     //converte automaticamente para json
