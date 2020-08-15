@@ -15,6 +15,6 @@ console.log(l,e,tras)
 const [x,y]=[1,2,3]
 console.log(x,y)
 
+const {idade, nome}= {nome:'ana ', idade:9}
 //desestruturar um objeto
-const {idade, nome}= {nome:'ana', idade:9}
-console.log(nome, idade)
+console.log(nome, idade)        
