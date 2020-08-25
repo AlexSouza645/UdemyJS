@@ -17,7 +17,7 @@ console.log(pessoa.nome, pessoa.ola())
 
 //classe internamente vai ser convertida em uma função
 class animal {}
-class cachorro extends animal{// extendds= herança em classes
+class cachorro extends animal{// extends= herança em classes
     falar(){
         return 'au au'
     }
