@@ -1,5 +1,6 @@
 //operador  ...rest(juntar)/ spread (espalhar)
 // usar rest com parametro de função
+//tagged tempplate = capacidade de processar template string a partir de uma função
 
 // usar spread com objeto
 const funcionario = { nome: 'Maria', salario: 12348.99 }
