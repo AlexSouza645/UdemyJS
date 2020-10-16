@@ -2,11 +2,11 @@ const tecnologias = new Map()
 tecnologias.set('react', {framework:false})
 tecnologias.set ('angular', {framework:true})
 //console.log(tecnologias.react)
-console.log(tecnologias.get('react').framework)// get uisado p/ chamar o new map criado
+console.log(tecnologias.get('react').framework)// get usado p/ chamar o new map criado
 
 //outra forma de criar map
 const chavesVariadas = new Map([//array q vai criar outros arrays
-     [function (){}, 'função'],
+     [function (){}, 'função'],//chave , valor
      [{}, 'objeto'],
      [123,'numero'],
 
@@ -18,7 +18,9 @@ chavesVariadas.forEach((vl, ch)=>{
 })
 
 
-console.log(chavesVariadas.has(123))
-chavesVariadas.delete(123)//funcao delete retorna verdadeiro ou falso
-console.log(chavesVariadas.has(123))
-console.log(chavesVariadas.size)
+console.log(chavesVariadas.has(123))//diz se o elemento esta ou não contido no map/ boolean
+chavesVariadas.delete(123)//funcao delete retorna verdadeiro ou falso dentro do map
+console.log(chavesVariadas.has(123))// q se tornou falso
+console.log(chavesVariadas.size)//qtos elementos estao no map
+//map nao aceita repetiçao
+//apenas chaves se repetem em map
