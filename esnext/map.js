@@ -7,9 +7,8 @@ console.log(tecnologias.get('react').framework)// get usado p/ chamar o new map 
 //outra forma de criar map
 const chavesVariadas = new Map([//array q vai criar outros arrays
      [function (){}, 'função'],//chave , valor
-     [{}, 'objeto'],
-     [123,'numero'],
-
+     [{}, 'objeto'],//chave literal 
+     [123,'numero'],//objeto numerico
 ])
 
 chavesVariadas.forEach((vl, ch)=>{
@@ -24,3 +23,7 @@ console.log(chavesVariadas.has(123))// q se tornou falso
 console.log(chavesVariadas.size)//qtos elementos estao no map
 //map nao aceita repetiçao
 //apenas chaves se repetem em map
+
+chavesVariadas.set (123, 'a')
+chavesVariadas.set(123, 'b')
+console.log(chavesVariadas)
