@@ -8,7 +8,7 @@ function falarDepoisDe(segundos, frase) {
 }
 //promisse = processamento assincrono
 
-falarDepoisDe(5, 'que legal!')
+falarDepoisDe(3, 'que legal!')
 .then(frase=>frase.concat('?!'))
 .then (outrafrase =>console.log(outrafrase))
 
