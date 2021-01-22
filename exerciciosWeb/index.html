@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>
+        exercícios html
+    </title>
+</head>
+
+<body>
+    <header>
+
+        <h1>exercícios html</h1>
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - teste</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        <br>
+        curso de web moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {/* p/ pegar todos os links */
+            /*função q sera chamada assim q o usuario clicar*/
+            const conteudo = document.getElementById('conteudo')
+            link.onclick = function (e) {
+                e.preventDefault/*previne q um evento padrão ocorra*/
+                
+
+                /*requisição Ajax*/
+                fetch(link.href)/*link obtido atraves do laço forEach*/
+                    .then(resp => resp.text())/*serve p/ pegar o conteudo html da pagina da requisição*/
+           .then(html=>conteudo.innerHTML= html)
+        /*p/ cada link uma função disparada no onclick*/      
+        
+        }
+        })  
+    </script>
+</body>
+
+</html>
