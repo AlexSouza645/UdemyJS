@@ -4,6 +4,12 @@
     <title>
         exercícios html
     </title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+            /*padding espaçamento*/
+        }
+    </style>
 </head>
 
 <body>
@@ -12,28 +18,30 @@
         <h1>exercícios html</h1>
     </header>
     <nav>
-        <a href="exercicios/teste.html">00 - teste</a>
+        <a href="exercicios/teste.html">00 - teste</a>|
+        <a href="exercicios/texto1.html">texto 1
+            <a href="exercicios/texto2.html">texto 2</a>
+        </a>
     </nav>
-    <section id="conteudo"></section>
+    <section id="conteudo"></section>f
     <footer>
-        <br>
-        curso de web moderno
+curso de web moderno
     </footer>
     <script>
         document.querySelectorAll('a').forEach(link => {/* p/ pegar todos os links */
             /*função q sera chamada assim q o usuario clicar*/
             const conteudo = document.getElementById('conteudo')
             link.onclick = function (e) {
-                e.preventDefault/*previne q um evento padrão ocorra*/
-                
+                e.preventDefault()/*previne q um evento padrão ocorra*/
+
 
                 /*requisição Ajax*/
                 fetch(link.href)/*link obtido atraves do laço forEach*/
                     .then(resp => resp.text())/*serve p/ pegar o conteudo html da pagina da requisição*/
-           .then(html=>conteudo.innerHTML= html)
-        /*p/ cada link uma função disparada no onclick*/      
-        
-        }
+                    .then(html => conteudo.innerHTML = html)
+                /*p/ cada link uma função disparada no onclick*/
+
+            }
         })  
     </script>
 </body>
