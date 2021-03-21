@@ -1,4 +1,4 @@
-<table border="1">
+<table>
     <caption>produtos</caption>
     <thead>
         <!--  cabeçalho da tabela -->
@@ -12,7 +12,7 @@
             </th>
             <th>preço</th>
             <th>quantidade</th>
-            
+
             <th>total</th>
 
         </tr>
@@ -36,15 +36,38 @@
         </tr>
     </TBODY>
     <tfoot>
-<TR>
-    <td colspan="3"><!--para o td ocupar mais de uma coluna-->
-total
-    </td>
-    <td>37637</td>
-</TR>
+        <TR>
+            <td colspan="3">
+                <!--para o td ocupar mais de uma coluna-->
+                total
+            </td>
+            <td>37637</td>
+        </TR>
 
 
     </tfoot>
 
 </table>
 <!-- comentario automatico = ctrl + ; -->
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        /*espaçamento*/
+    }
+    thead tr{
+        border-bottom: solid 3px #444;
+    }
+   tbody tr:hover  { /* qdo passar o mouse por cima */
+        background-color: #dedede;
+    }
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>
