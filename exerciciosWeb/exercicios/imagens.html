@@ -1,23 +1,115 @@
-<!-- formatos de imagem -->
+<div wm-slider>
+    <!-- formatos de imagem -->
 
-<p>
-    <!--caminho absoluto-->
-    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="muro da cidade" width="513" height='342'
-        title="muro da cidade por Tarso Bessa">
-</p>
+    <p>
+        <!--caminho absoluto-->
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="muro da cidade" width="513" height='342'
+            title="muro da cidade por Tarso Bessa">
+    </p>
 
-<!-- gif -->
-<p>
-    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="
+    <!-- gif -->
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="
    Intro cod3r" height="342" width="513">
-</p>
+    </p>
 
-<p class="circular"></p>
-<img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de janeiro" height='342'> </p>
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de janeiro" height='342'>
+    </p>
+    </p>
+
+    <!-- paragrafo de texto com imagem -->
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="avatar" height="50" align='left'>
+        texto area sdfdfsd asdfsda sdfjsdiof fsdsaf safsdaf asdfsdf safsadfsad
+        sadfsadfas safdsdf asddfsadf
+    </p>
+
+    <p class="cidade"></p>
+    <!-- tag html para imagens responsivas -->
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+            <img src="(http://files.cod3r.com.br/curso-web/logo-estreita.png)" alt="logo">
+        </picture>
+    </p>
+
+
+</div>
+
+
 
 <style>
-    .circular{
+    p {
+        position: absolute;
+        display: none;
+    }
+
+
+    .circular {
         width: 513px;
         background-color: #444;
     }
+
+    .texto {
+        width: 400px;
+
+    }
+
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513;
+        height: 342;
+        background-image: url(http://files.cod3r.com.br/curso-web/imagem4.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200;
+    }
 </style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+
+        } else {
+            callback()
+        }
+
+
+    }
+    // const p = document.querySelector('[wm-slider] > p')
+    // p.style.display = 'block';
+    // mover (p, 1500, -520, 5 , ()=>{
+    // console.log('terminou')
+    // })
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])
+
+    }
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+
+        slide.style.left = `${inicio}px`
+        mover(slide, inicio, fim, 5, () => {
+            exibirSlide, getProximo(slides, slide)
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+    slider()
+
+</script>
