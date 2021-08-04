@@ -6,6 +6,32 @@
     <title>Anatomia CSS</title>
     <style>
         /* ... */
+        .selector {
+            color: #222;
+            /* unidade associada a numeros */
+            font-size:30px ;
+            text-align: center;
+            /* multiplos valores */
+            border: solid 5px navy;/*shorthand property*/
+             /* várias opções a serem seguidas */
+             font-family: Helvetica, monospace;
+             /* funções */
+             width: calc(100% - 300px);
+             background-color: rgb(189, 214, 223)     
+            }
+            /* usando uma pseudo-classe */
+            .selector:hover {
+                background-color: rgb(230, 73, 16);
+
+            }
+
+            /* usando um pseudo elemento */
+            .selector::first-letter{
+                font-size: 60px;
+                font-weight: bold;
+
+                
+            }
     </style>
 </head>
 

@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
     <style>
-        /* ... */
+       body{
+           background-color: aquamarine;
+       }
     </style>
+    <!-- rel = relação  href= referencia 
+    o que foi processado por ultimo sera oq vai ter preferencia
+    -->
+    <link rel="stylesheet" href="css/externo.css">
 </head>
-
-<body>
-    <h1>E agora?</h1>
+<!-- evitar colocar propriedade in-line -->
+<body style="background-color: coral;">
+    <h1> E agora?</h1>
 </body>
 
 </html>
