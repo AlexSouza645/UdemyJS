@@ -12,3 +12,10 @@ li{
     margin: 5px;/* comentario*/
 }
 /*  */
+
+.tag label {
+    color: #fff;
+    vertical-align: top;
+    margin-right: 10px;
+    padding: 0px 5px 3px 3px ;
+}
