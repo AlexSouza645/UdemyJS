@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Display</title>
     <style>
-        /* ... */
-    </style>
-</head>
+      /* ... */
+      body {
+        font-size: 40px;
+        color: aliceblue;
+        background-color: coral;
+      }
+      ul {
+        padding: 0;
+      }
+      div {
+        background-color: seagreen;
+      }
 
-<body>
+      span {
+          background-color: dodgerblue;
+        }
+        li {
+          background-color: purple;
+        }
+
+      div, span, li {
+        width: 50%;
+        width: 200px;
+        height: 80px;
+        padding-top: 30px;
+        text-align: center;
+        display: block;/* faz com que cada item ocupe uma linha, quebra de linha*/
+        display: inline;/*tods os itens ficam em linha*/
+        display: inline-block ;/*itens ficam em linha mas saõ considerdads a altura e largura*/
+      }
+    </style>
+  </head>
+
+  <body>
     <div>Texto 1</div>
     <span>Texto 2</span>
     <span>Texto 3</span>
     <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
     </ul>
-</body>
-
+  </body>
 </html>
