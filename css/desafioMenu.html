@@ -22,12 +22,11 @@
         font-family: "Oswald", sans-serif;
         background-color: lightgray;
       }
-      .cabecalho{
+      .cabecalho {
         background: #333;
         border-bottom: solid 5px #4faddb;
         height: 80px;
         box-sizing: content-box;
-        
       }
       .logo {
         display: inline-block;
@@ -38,9 +37,89 @@
       .logo img {
         height: 100%;
       }
-      .menu-toggle{
+      .menu-toggle {
         float: right;
+        color: #eee;
+        background-color: #555;
+        border: solid 1px #777;
+        border-radius: 5px;
+        height: 40px;
+        padding: 10px 20px;
+        margin: 20px 15px;
       }
+
+      .menu {
+        display: inline-block;
+        vertical-align: top;
+        height: 80px;
+        padding: 25px;
+      }
+
+      .menu ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu li {
+        display: inline-block;
+      }
+
+      .cabecalho a {
+        text-decoration: none;
+        color: #eee;
+        font-size: 1.3em;
+      }
+
+      .autenticacao {
+        float: right;
+        height: 80px;
+        padding: 25px;
+      }
+
+      .menu a {
+        padding: 15px;
+      } 
+      /* efeito de passar o mouse sobre o botao */
+      .menu a:hover,
+      .menu a.selected {
+        background-color: #4faddb;
+        color: #000;
+      }
+
+      .botao{
+        border-radius: 30px;
+        padding: 10px 25px;
+        margin: 10px;
+      }
+
+      .destaque{
+        background-color: #f50a31;
+        color: #fff ;
+      }
+/* qdo o elemento tiver no minimo 679 px o toggle some  */
+      @media(min-width: 679px){
+
+        .menu-toggle{
+          display: none;
+        }
+      }
+
+      @media (max-width: 680px){
+
+        .menu{
+          display: none;
+        }
+      }
+
+      @media (max-width: 910px){
+        .autenticacao{
+          display: none;
+        }
+      }
+
+
+
+
     </style>
   </head>
 
@@ -78,6 +157,19 @@
 
     <script>
       // ...
+
+      window.onhashchange = function(e){
+        const oldURL = e.oldURL.split('#')[1]//pegar somente o que aparece depois do # da url de indice [1]   
+        const newURL = e.newURL.split('#')[1]
+        console.log (oldURL, newURL)
+
+        const oldMENU = document.querySelector(`.menu a[href='#${oldURL}'`)
+        const newMENU = document.querySelector(`.menu a[href='#${newURL}'`)
+      oldMENU  && oldMENU.classList.remove('selected')
+      newMENU && newMENU.classList.add('selected')
+      
+      
+      }
     </script>
   </body>
 </html>
