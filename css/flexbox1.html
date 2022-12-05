@@ -7,14 +7,34 @@
     <link rel="stylesheet" href="css/tag.css">
     <style>
         /* ... */
+
+        .big {
+            font-size: 1.5em;
+
+        }
+
+        .flex-container {
+            /* por padrão o flex container segue a direção row */
+            display: flex;
+            flex-direction: column;
+            flex-direction: column-reverse;
+            flex-direction: row-reverse;
+            flex-direction: row;
+            width: 50%;
+            height: 200px;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+            flex-flow: column-reverse wrap;
+
+        } 
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
+    <div class="flex-container ">
         <div class="tag nolabel">1</div>
         <div class="tag nolabel">2</div>
-        <div class="tag nolabel big">3</div>
+        <div class=" big">3</div>
         <div class="tag nolabel">4</div>
         <div class="tag nolabel">5</div>
         <div class="tag nolabel">6</div>
