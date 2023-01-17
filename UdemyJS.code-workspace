@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "UdemyJS",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ajax"
+	}
+}
